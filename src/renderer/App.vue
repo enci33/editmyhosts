@@ -1,13 +1,22 @@
 <template>
   <div id="app">
+    <!--<side-bar />-->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'editmyhosts'
+// import SideBar from '@/components/SideBar'
+export default {
+  name: 'Editmyhosts',
+  components: {
+    // SideBar
+  },
+  data() {
+    return {
+    }
   }
+}
 </script>
 
 <style>

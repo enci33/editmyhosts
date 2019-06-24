@@ -3,11 +3,15 @@ const storage = window.localStorage
 const projectKey = 'projectList'
 
 export function addProject(data) {
-  const list = getProject()
-  list.push(data)
-  storage.setItem(projectKey, list)
+  const map = getProject()
+  if (!map[data.name]) {
+    map[data.name] = data
+    storage.setItem(projectKey, JSON.stringify(map))
+    return true
+  }
+  return false
 }
 
 export function getProject() {
-  return JSON.parse(storage.getItem(projectKey) || '[]')
+  return JSON.parse(storage.getItem(projectKey) || '{}')
 }
