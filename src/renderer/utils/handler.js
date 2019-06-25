@@ -1,4 +1,4 @@
-import { Message } from 'element-ui'
+import { Message, MessageBox } from 'element-ui'
 
 export function warnMessage(msg) {
   return Message({
@@ -21,5 +21,19 @@ export function successMessage(msg) {
     type: 'success',
     message: msg,
     duration: 2000
+  })
+}
+
+export function confirm(msg = '确认此操作？') {
+  return new Promise((resolve, reject) => {
+    MessageBox.confirm(msg, '提示', {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }).then(() => {
+      resolve()
+    }).catch(() => {
+      reject()
+    })
   })
 }

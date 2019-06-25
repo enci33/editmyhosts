@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <!--<side-bar />-->
+    <side-bar />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import SideBar from '@/components/SideBar'
+import SideBar from '@/components/SideBar'
 export default {
   name: 'Editmyhosts',
   components: {
-    // SideBar
+    SideBar
   },
   data() {
     return {
