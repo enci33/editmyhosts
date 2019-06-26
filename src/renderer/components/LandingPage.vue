@@ -1,10 +1,24 @@
 <template>
   <div id="wrapper" class="wrapper">
-    <el-table :data="data">
-      <el-table-column type="selection" width="50"></el-table-column>
+    <el-table :data="projectData">
       <el-table-column>
         <template slot-scope="scope">
-          <el-input></el-input>
+          <el-checkbox v-model="scope.row.checked"></el-checkbox>
+        </template>
+      </el-table-column>
+      <el-table-column label="ip">
+        <template slot-scope="scope">
+          <el-input v-model="scope.row.ip"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column label="host">
+        <template slot-scope="scope">
+          <el-input v-model="scope.row.host"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column label="注释">
+        <template slot-scope="scope">
+          <span>{{ scope.row.comment }}</span>
         </template>
       </el-table-column>
     </el-table>
@@ -12,24 +26,22 @@
 </template>
 
 <script>
-import {addProject, delProject, getProjectMap} from '../utils/storage'
 import {confirm, errMessage, successMessage} from '../utils/handler'
 import { mapGetters } from 'vuex'
 export default {
   name: 'landing-page',
   data() {
     return {
-      data: []
     }
   },
   computed: {
     ...mapGetters([
-      'currentKey'
-    ])
-  },
-  created() {
-  },
-  methods: {
+      'currentIndex',
+      'projectList'
+    ]),
+    projectData() {
+      return this.projectList[this.currentIndex]
+    }
   }
 }
 </script>

@@ -4,7 +4,7 @@ import {
   getHostsFile,
   getCheckedHosts } from './utils'
 
-ipcMain.on('projectMap', async(event, arg) => {
+ipcMain.on('projectList', async(event, arg) => {
   console.log('参数', arg)
   const choosedHosts = await getCheckedHosts(arg)
   console.log('111111111111111')

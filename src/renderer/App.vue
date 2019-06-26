@@ -9,6 +9,7 @@
 import SideBar from '@/components/SideBar'
 import {addProject, getProjectMap, updateProjectByKey} from './utils/storage'
 import { ipcRenderer } from 'electron'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Editmyhosts',
   components: {
@@ -18,24 +19,30 @@ export default {
     return {
     }
   },
+  computed: {
+    ...mapGetters([
+      'projectList'
+    ])
+  },
   created() {
-    getProjectMap().then(async data => {
-      if (!data['system']) {
-        const systemHost = ipcRenderer.sendSync('getSystemHosts')
-        console.log(systemHost)
-        await updateProjectByKey('host', {
-          name: 'system',
-          data: this.handleSystemHosts(systemHost),
-          checked: true
-        })
-      }
-      ipcRenderer.send('projectMap', data)
+    const systemHost = ipcRenderer.sendSync('getSystemHosts')
+    console.log(systemHost)
+    console.log(...mapActions(['project']))
+    this.$store.dispatch('project/addHost', {
+      name: 'system',
+      data: this.handleSystemHosts(systemHost),
+      checked: true
     })
+    ipcRenderer.send('projectList', this.projectList)
   },
   methods: {
     handleSystemHosts(data) {
       const result = []
-      for (const [item, index] of data) {
+      for (const index in data) {
+        const item = data[index]
+        if (!item) {
+          continue
+        }
         const setArr = new Set(item.trim().split(' ')) // 删除多余的空格和#
         setArr.delete('') // 删除空格
         const arr = Array.from(setArr) // 转换为数组
