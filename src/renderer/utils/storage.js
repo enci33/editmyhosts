@@ -9,17 +9,19 @@ const projectKey = 'projectList'
  */
 export async function addProject(data, index) {
   const projectList = await getProjectMap()
-  await projectList.forEach(async item => {
+  for (const index in projectList) {
+    const item = await projectList[index]
     if (item.name === data.name) {
-      return '命名重复'
+      return await false
     }
-  })
+  }
   if (index) {
     await projectList.splice(index, 0, data)
   } else {
     await projectList.push(data)
   }
   await setProject(projectList)
+  return await true
 }
 
 /**
@@ -74,12 +76,13 @@ export async function getProjectByIndex(index) {
  */
 export async function getProjectByName(name) {
   const projectList = await getProjectMap()
+  let result = await false
   await projectList.forEach(async item => {
     if (item.name === name) {
-      return await item
+      result = item
     }
   })
-  return await false
+  return result
 }
 
 /**

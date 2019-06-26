@@ -1,7 +1,7 @@
 <template>
   <div class="side_bar">
     <div class="project_wrap">
-      <div v-for="(item, index) in projectList" :class="['item', {'item_active': currentIndex === index}]" @click="chooseProject(index)">
+      <div v-for="(item, index) in project" :key="item.name" :class="['item', {'item_active': currentIndex === index}]" @click="chooseProject(index)">
         <div class="project_name">
           <span>{{ item.name }}</span>
         </div>
@@ -28,17 +28,25 @@ export default {
   data() {
     return {
       isShowEdit: false,
-      systemHosts: false
+      systemHosts: false,
     }
   },
   computed: {
     ...mapGetters([
       'currentIndex',
       'projectList'
-    ])
+    ]),
+    project: {
+      get() {
+        return JSON.parse(JSON.stringify(this.projectList))
+      },
+      set(data) {
+        this.$store.dispatch('project/updateProject', data)
+      }
+    }
   },
   created() {
-    console.log(this.projectList)
+    this.project = [].concat(this.projectList)
   },
   methods: {
     init() {

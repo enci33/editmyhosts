@@ -49,6 +49,10 @@ export default {
         if (!arr.length) {
           continue
         }
+        const ipReg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
+        if (!ipReg.test(arr[0]) && !ipReg.test(arr[1])) {
+          continue
+        }
         if (arr[0].indexOf('#') > -1) { // # 127.0.0.1 localhost # 注释
           result.push({
             id: index,
@@ -67,6 +71,7 @@ export default {
           })
         }
       }
+      console.log(result)
       return result
     }
   }

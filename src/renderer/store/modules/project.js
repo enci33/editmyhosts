@@ -1,12 +1,22 @@
-import { addProject, delProject, getProjectByName, updateProjectByIndex } from '../../utils/storage'
+import {
+  addProject,
+  delProject,
+  getProjectByName,
+  getProjectMapSync, setProject,
+  updateProjectByIndex
+} from '../../utils/storage'
 
 const state = {
-  currentIndex: 0 // 当前索引
+  currentIndex: 0, // 当前索引
+  projectList: getProjectMapSync()
 }
 
 const mutations = {
   CHANGE_CURRENT_INDEX: (state, index) => {
     state.currentIndex = index
+  },
+  UPDATE_PROJECT_LIST: (state) => {
+    state.projectList = getProjectMapSync()
   }
 }
 
@@ -16,24 +26,29 @@ const actions = {
   },
   async addProject({ commit }, { data, index = null }) {
     await addProject(data, index)
+    await commit('UPDATE_PROJECT_LIST')
   },
   async updateProjectByIndex({ commit }, { index, data }) { // 更新项目
     await updateProjectByIndex(index, data)
+    await commit('UPDATE_PROJECT_LIST')
   },
   async delProjectByIndex({ commit }, { index }) { // 删除项目
     await delProject(index)
+    await commit('UPDATE_PROJECT_LIST')
   },
-  addHost({ commit }, data) { // 处理系统hosts文件,放在首位
-    console.log(data)
-    return new Promise(async(resolve, reject) => {
-      const host = await getProjectByName('system')
-      console.log(host)
-      if (!host) {
-        await addProject(data, 0)
-      } else {
-        await updateProjectByIndex(0)
-      }
-    })
+  async addHost({ commit }, data) { // 处理系统hosts文件,放在首位
+    const host = await getProjectByName('system')
+    console.log(host)
+    if (!host) {
+      await addProject(data, 0)
+    } else {
+      await updateProjectByIndex(0, host)
+    }
+    await commit('UPDATE_PROJECT_LIST')
+  },
+  async updateProject({ commit }, data) { // 更新project
+    await setProject(data)
+    await commit('UPDATE_PROJECT_LIST')
   }
 }
 

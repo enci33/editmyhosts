@@ -40,7 +40,7 @@ export default {
       'projectList'
     ]),
     projectData() {
-      return this.projectList[this.currentIndex]
+      return this.projectList[this.currentIndex].data || []
     }
   }
 }
