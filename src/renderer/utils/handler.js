@@ -1,4 +1,6 @@
 import { Message, MessageBox } from 'element-ui'
+import { ipcRenderer } from 'electron'
+import { getProjectMapSync } from './storage'
 
 /**
  * 警告的消息
@@ -69,4 +71,9 @@ export function prompt(msg = '请输入内容', obj = {}) {
       reject(e)
     })
   })
+}
+
+export function takeEffect() {
+  const projectList = getProjectMapSync()
+  ipcRenderer.send('effective', projectList)
 }

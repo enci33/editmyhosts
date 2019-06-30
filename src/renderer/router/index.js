@@ -7,8 +7,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: () => import('@/components/LandingPage')
+      name: 'Index',
+      component: () => import('@/components/Index')
+    },
+    {
+      path: '/table',
+      name: 'Table',
+      component: () => import('@/components/Table')
     },
     {
       path: '*',

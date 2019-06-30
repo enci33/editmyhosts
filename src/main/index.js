@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
-require('./server/index')
+import './server/index'
 
 /**
  * Set `__static` path to static files in production

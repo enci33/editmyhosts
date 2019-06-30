@@ -5,8 +5,10 @@ import {
   getProjectMapSync, setProject,
   updateProjectByIndex
 } from '../../utils/storage'
+import { takeEffect } from '../../utils/handler'
 
 const state = {
+  storageKey: 'projectText',
   currentIndex: 0, // 当前索引
   projectList: getProjectMapSync()
 }
@@ -28,11 +30,14 @@ const actions = {
     await addProject(data, index)
     await commit('UPDATE_PROJECT_LIST')
   },
-  async updateProjectByIndex({ commit }, { index, data }) { // 更新项目
+  async updateProjectByIndex({ commit, state }, { index, data, mark = false }) { // 更新项目
     await updateProjectByIndex(index, data)
     await commit('UPDATE_PROJECT_LIST')
+    if (mark) {
+      takeEffect()
+    }
   },
-  async delProjectByIndex({ commit }, { index }) { // 删除项目
+  async delProjectByIndex({ commit, state }, { index }) { // 删除项目
     await delProject(index)
     await commit('UPDATE_PROJECT_LIST')
   },

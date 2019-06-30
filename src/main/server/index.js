@@ -1,17 +1,33 @@
 import { ipcMain } from 'electron'
-console.log('平台：', process.platform)
+import logger from '../utils/log'
+import fs from 'fs'
+logger.debug('平台：', process.platform)
 import {
   getHostsFile,
-  getCheckedHosts } from './utils'
+  getCheckedFileData,
+  createHostBacDir,
+  hostBacDirPath,
+  systemHostsPath,
+  takeEffectHostsFile
+} from '../utils/index'
 
-ipcMain.on('projectList', async(event, arg) => {
-  console.log('参数', arg)
-  const choosedHosts = await getCheckedHosts(arg)
-  console.log('111111111111111')
-  console.log(choosedHosts)
-  console.log('22222222222222')
-  const hostsFileContent = await getHostsFile()
-  console.log(hostsFileContent)
+// 创建备份文件夹，如果第一次创建，再备份文件夹中复制一份host文件
+const hostBacFilePath = hostBacDirPath + 'hosts'
+if (!fs.existsSync(hostBacFilePath)) {
+  const content = fs.readFileSync(systemHostsPath, 'utf-8')
+  fs.writeFileSync(hostBacFilePath, content, { encoding: 'utf-8' })
+}
+
+/**
+ * 修改并写入host文件
+ */
+ipcMain.on('effective', async(event, arg) => {
+  // 获取选中的hsots列表
+  const fileData = await getCheckedFileData(arg)
+  logger.debug(fileData)
+  logger.debug(new Date())
+  await createHostBacDir()
+  await takeEffectHostsFile(fileData)
 })
 
 ipcMain.on('getSystemHosts', async(event, arg) => {

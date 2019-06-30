@@ -1,6 +1,6 @@
 const storage = window.localStorage
 
-const projectKey = 'projectList'
+const projectKey = 'projectText'
 
 /**
  * 添加项目
