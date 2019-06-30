@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d7d1dd2-5f9e-418b-99c6-65a5471f575a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.electron-vue/dev-runner.js" beforeDir="false" afterPath="$PROJECT_DIR$/.electron-vue/dev-runner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.electron-vue/webpack.main.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.electron-vue/webpack.main.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/LandingPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/Table.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/getters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/style/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/utils/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/utils/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/utils/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/utils/storage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,11 +40,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/utils/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
-                  <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+                <state relative-caret-position="247">
+                  <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -98,11 +82,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="209">
-                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                  <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
                 </state>
               </provider>
             </entry>
@@ -236,11 +220,11 @@
         <option value="$PROJECT_DIR$/src/renderer/App.vue" />
         <option value="$PROJECT_DIR$/src/renderer/utils/handler.js" />
         <option value="$PROJECT_DIR$/src/main/server/index.js" />
-        <option value="$PROJECT_DIR$/src/main/utils/index.js" />
         <option value="$PROJECT_DIR$/src/renderer/store/modules/project.js" />
         <option value="$PROJECT_DIR$/src/renderer/style/index.scss" />
         <option value="$PROJECT_DIR$/src/renderer/components/Index.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/Item.vue" />
+        <option value="$PROJECT_DIR$/src/main/utils/index.js" />
       </list>
     </option>
   </component>
@@ -427,15 +411,16 @@
       <workItem from="1561385017612" duration="4306000" />
       <workItem from="1561444596422" duration="27778000" />
       <workItem from="1561558629197" duration="112000" />
-      <workItem from="1561775394556" duration="41536000" />
+      <workItem from="1561775394556" duration="41645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95370000" />
+    <option name="totallyTimeSpent" value="95479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -772,24 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#107#193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/utils/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/style/index.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -830,7 +797,25 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#107#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utils/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
         </state>
       </provider>
     </entry>

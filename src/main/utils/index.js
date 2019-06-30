@@ -5,7 +5,7 @@ import logger from './log'
 let hostsFilePath = '' // hosts文件地址
 let hostBacDir = '' // hosts备份目录
 if (process.platform === 'win32') {
-  const baseDir = 'C:\\d\\test\\'
+  const baseDir = 'C:\\Windows\\System32\\drivers\\etc\\'
   hostsFilePath = baseDir + 'hosts'
   hostBacDir = baseDir + 'editmyhosts\\'
 }
