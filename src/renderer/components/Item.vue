@@ -1,9 +1,9 @@
 <template>
   <div class="item" @click.stop="toggleChoose" @mouseenter="showMask = true" @mouseleave="showMask = false">
-    <div class="item_name_wrap">
-      <h3
+    <div class="item_name_wrap title_font">
+      <span
         v-if="!isEdit"
-        class="item_name">{{ item.name }}</h3>
+        class="item_name">{{ item.name }}</span>
       <el-input
         v-else
         ref="title"
@@ -159,6 +159,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
+    padding: 10px;
     overflow: auto;
     text-align: left;
     white-space: pre-line;

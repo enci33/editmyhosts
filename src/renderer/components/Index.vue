@@ -51,6 +51,9 @@ export default {
   .item_wrap{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
   }
   .add_project{
     display: table;

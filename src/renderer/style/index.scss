@@ -1,11 +1,19 @@
 body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: "Heebo", sans-serif;
+  font-family: "Microsoft Yahei", sans-serif;
   background: linear-gradient(45deg, #d2ffde, #ceefff, #ded1ff);
   padding: 0 20px;
   margin: 0;
   height: 100vh;
+}
+.content_font{
+  font-family: "Microsoft Yahei", sans-serif !important;
+}
+.title_font{
+  font-family: "Microsoft Yahei", sans-serif;
+  font-size: 20px !important;
+  font-weight: bold !important;
 }
 
 i{
