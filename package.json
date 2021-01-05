@@ -55,7 +55,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "element-ui": "^2.9.2",
     "eslint-plugin-vue": "^5.2.3",
     "log4js": "^4.4.0",
